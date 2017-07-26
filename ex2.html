@@ -36,6 +36,8 @@ DP-Challenger : Are you ready ?
 						var list = data["data"];
 						var i = 0;
 						var friendslist = {};
+						/*this loop is just for rearranging the list of friends returned withheir respective names, id and picture url in one place.*/
+						/*Let's say it rearranged the username as {"name": ["id, "picture_url"]} */
 						while (i<response.data.length) {
 							friendslist[list[i]["name"]] = [list[i]["id"], list[i]["picture"]["data"]];
 							i++;
