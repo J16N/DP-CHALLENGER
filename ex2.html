@@ -27,7 +27,7 @@ DP-Challenger : Are you ready ?
 			var user_friendlist;
 			
 			FB.api(
-				"/me/taggable_friends?fields=id,name,picture.width(200).height(200)&limit=99999"
+				"/me/taggable_friends?fields=id,name,picture.width(200).height(200)&limit=99999",
 				function (response) {
 					if (response && !response.error) {
 						/* handle the result */
