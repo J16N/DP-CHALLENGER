@@ -34,7 +34,7 @@ DP-Challenger : Are you ready ?
 						
 						for (var i = 0; i<response.data.length; i++) {
 							var data = response.data;
-							friendslist[data[i].name] = [data[i].id, data[i].picture.data];
+							friendslist[data[i].name] = [data[i].id, data[i].picture.data.url];
 						}
 						console.log(friendslist)
 						var name = Object.keys(friendslist);
