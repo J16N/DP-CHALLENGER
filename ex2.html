@@ -36,7 +36,9 @@ DP-Challenger : Are you ready ?
 							var data = response.data;
 							friendslist[data[i].name] = [data[i].id, data[i].picture.data];
 						}
-						document.getElementById("SCROLL").innerHTML = friendslist.name;
+						console.log(friendslist)
+						var name = Object.keys(friendslist);
+						document.getElementById("SCROLL").innerHTML = name[0];
 						}
 					} else {
 						document.getElementById("SCROLL").innerHTML = "Sorry could not retireve available friends. Please try again later.";
