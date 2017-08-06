@@ -23,27 +23,20 @@ DP-Challenger : Are you ready ?
 			window.location = "http://dpchallenger.com/ex2.html";
 			window.stop();
 			
-			var friendslist = [];
-			var user_friendlist;
-			
+			var friendslist = {};
 			FB.api(
 				"/me/taggable_friends?fields=id,name,picture.width(200).height(200)&limit=99999",
 				function (response) {
 					if (response && !response.error) {
 						/* handle the result */
 						console.log(response)
-						var data = response.data;
-						var list = data["data"];
-						var i = 0;
-						var friendslist = {};
-						/*this loop is just for rearranging the list of friends returned withheir respective names, id and picture url in one place.*/
-						/*Let's say it rearranged the username as {"name": ["id, "picture_url"]} */
-						while (i<response.data.length) {
-							friendslist[list[i]["name"]] = [list[i]["id"], list[i]["picture"]["data"]];
-							i++;
+						console.log(response)
+						
+						for (var i = 0; i<response.data.length; i++) {
+							var data = response.data;
+							friendslist[data[i].name] = [data[i].id, data[i].picture.data];
 						}
-						for (var k in friendslist) {
-							document.getElementById("SCROLL").innerHTML = k;
+						document.getElementById("SCROLL").innerHTML = friendslist.name;
 						}
 					} else {
 						document.getElementById("SCROLL").innerHTML = "Sorry could not retireve available friends. Please try again later.";
