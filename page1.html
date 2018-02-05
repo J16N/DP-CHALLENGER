@@ -17,11 +17,9 @@ DP-Challenger : Are you ready ?
 		console.log(response);
 		// The response object is returned with a status field that lets the
 		// app know the current login status of the person.
-		// Full docs on the response object can be found in the documentation
-		// for FB.getLoginStatus().
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
-			window.location = "http://dpchallenger.com/ex2.html";
+			window.location = "http://dpchallenger.com/page2.html";
 		} else {
 			// The person is not logged into your app or we are unable to tell.
 			alert("Please login to continue.");
@@ -29,8 +27,7 @@ DP-Challenger : Are you ready ?
 	}
 
 	// This function is called when someone finishes with the Login
-	// Button.  See the onlogin handler attached to it in the sample
-	// code below.
+	// Button.
 	function checkLoginState() {
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
